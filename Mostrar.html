@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos Enviados</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Datos Enviados</h1>
+        <div id="resultado"></div>
+        <button onclick="window.location.href='formulario.html';">Volver al Formulario</button>
+    </div>
+
+    <script>
+        const nombre = localStorage.getItem('nombre');
+        const direccion = localStorage.getItem('direccion');
+        const email = localStorage.getItem('email');
+        const telefono = localStorage.getItem('telefono');
+        const comentarios = localStorage.getItem('comentarios');
+
+        const resultadoDiv = document.getElementById('resultado');
+        resultadoDiv.innerHTML = `
+            <p><strong>Nombre Completo:</strong> ${nombre}</p>
+            <p><strong>Dirección:</strong> ${direccion}</p>
+            <p><strong>Correo Electrónico:</strong> ${email}</p>
+            <p><strong>Teléfono:</strong> ${telefono}</p>
+            <p><strong>Comentarios Adicionales:</strong> ${comentarios}</p>
+        `;
+    </script>
+</body>
+</html>
+
